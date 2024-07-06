@@ -1,1 +1,6 @@
 .venv
+tcpip/__pycache__
+tcpip/uploads
+.env
+buildozer.spec 
+.buildozer
