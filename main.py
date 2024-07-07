@@ -1,4 +1,4 @@
-#!/home/pydev/mobileApp/.venv/bin/python
+#!/home/makan/mobileApp/.venv/bin/python3
 
 from kivymd.app import MDApp
 from kivymd.uix.filemanager import MDFileManager
