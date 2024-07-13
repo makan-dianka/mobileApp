@@ -4,3 +4,4 @@ tcpip/uploads
 .env
 buildozer.spec 
 .buildozer
+bin
