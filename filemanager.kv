@@ -1,22 +1,23 @@
-#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+MyLayout:
+
+    GridLayout:
+        cols:1
+        size: root.width -200, root.height -200
+        pos: (100, 100)
 
 
-ScreenManagement:
-    transition: FadeTransition()
-    HelloWorld:
+        GridLayout:
+            cols:2
 
-
-<HelloWorld>:
-	name: "Home"
-
-	GridLayout:
-
-		padding: 100
-		cols: 1
-		rows: 7
-		spacing: 20
-	
-		Label:
-			text: "Hello World !"
-			color: 1, 1, 0, 1
-
+            Label:
+                text: 'Name'
+                font_size: 30
+            
+            TextInput:
+                multiline: False
+                font_size: 35
+                
+        Button:
+            text: 'Soumettre'
+            font_size: 30
+                
