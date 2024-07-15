@@ -7,12 +7,22 @@ from kivy.core.window import Window
 from kivy.uix.widget import Widget
 
 from kivy.lang import Builder
+from kivy.properties import ObjectProperty
 
 
 
 
 class MyLayout(Widget):
-    pass
+
+    toplabel = ObjectProperty(None)
+    name = ObjectProperty(None)
+
+
+    def get_name_text(self):
+
+        self.toplabel.text = f"Hello {self.name.text} !"
+        self.name.text = ""
+        
 
 
 

@@ -1,23 +1,58 @@
+#:import utils kivy.utils
+
 MyLayout:
+    orientation:"vertical"
+    name: name
+    toplabel: toplabel
 
     GridLayout:
         cols:1
-        size: root.width -200, root.height -200
-        pos: (100, 100)
+        size: root.width -350, root.height -350
+        pos: (200, 200)
 
+        Label:
+            id: toplabel
+            text: 'Hello !'
+            
 
         GridLayout:
             cols:2
 
             Label:
-                text: 'Name'
+                text: 'Name:'
                 font_size: 30
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 1, 1
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
             
             TextInput:
+                id: name
                 multiline: False
                 font_size: 35
-                
-        Button:
+
+
+        RoundedButton:
             text: 'Soumettre'
+            back_color: (48/255,84/255,150/255,1)
             font_size: 30
+            on_press: root.get_name_text()
+
+
+
+
+
+
+<RoundedButton@Button>:
+    background_color: 0,0,0,0
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [40]
                 
