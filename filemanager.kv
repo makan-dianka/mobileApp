@@ -1,58 +1,78 @@
-#:import utils kivy.utils
+<Button>:
+    font_size: 30
+    background_normal: ''
+    background_color: (0,0,1,1)
+
+
 
 MyLayout:
-    orientation:"vertical"
-    name: name
-    toplabel: toplabel
 
-    GridLayout:
-        cols:1
-        size: root.width -350, root.height -350
-        pos: (200, 200)
+    first_btn: first_btn
+    second_btn: second_btn
+    thirth_btn: thirth_btn
+    mist: mist
+
+
+
+    BoxLayout:
+        size: root.width, root.height
+
+        orientation:"vertical"
+        spacing: 30
+        padding: 50
 
         Label:
-            id: toplabel
-            text: 'Hello !'
-            
+            text: 'Trouvez le nombre mystère'
+            pos_hint: {'center_x' : 0.5, 'center_y' : .5}
 
-        GridLayout:
-            cols:2
-
-            Label:
-                text: 'Name:'
-                font_size: 30
-                canvas.before:
-                    Color: 
-                        rgba: 0, 0, 1, 1
-                    Rectangle:
-                        pos:self.pos
-                        size:self.size
-            
-            TextInput:
-                id: name
-                multiline: False
-                font_size: 35
-
-
-        RoundedButton:
-            text: 'Soumettre'
-            back_color: (48/255,84/255,150/255,1)
-            font_size: 30
-            on_press: root.get_name_text()
+        Button:
+            id: mist
+            text: '?'
+            size_hint: (0.2, 2)
+            pos_hint: {'x' : 0.4, 'y' : 2}
+            width: 90
+            height: 150
+            background_color: (0,1,1,0)
+            # on_press: root.num_mister()
 
 
 
+        Button:
+            id: first_btn
+            text: 'Click to start'
+            on_press: root.choice_number()
+
+
+        Button:
+            id: second_btn
+            text: 'Click to start'
+            background_color: (0,1,0,1)
+            on_press: root.choice_number()
+
+
+        Button:
+            id: thirth_btn
+            text: 'Click to start'
+            background_color: (1,0,1,1)
+            on_press: root.choice_number()
 
 
 
-<RoundedButton@Button>:
-    background_color: 0,0,0,0
-    background_normal: ''
-    canvas.before:
-        Color:
-            rgba: (48/255,84/255,150/255,1)
-        RoundedRectangle:
-            size: self.size
-            pos: self.pos
-            radius: [40]
+        Button:
+            id: reset
+            text: 'reset'
+            background_color: (1,0,0,1)
+            on_press: root.reset()
+
+
+        # <RoundedButton@Button>:
+        #     background_color: 0,0,0,0
+        #     background_normal: ''
+        #     canvas.before:
+        #         Color:
+        #             rgba: (48/255,84/255,150/255,1)
+        #         RoundedRectangle:
+        #             size: self.size
+        #             pos: self.pos
+        #             radius: [40]
                 
